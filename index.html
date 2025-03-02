@@ -79,15 +79,33 @@
         /* 英雄区域 */
         .hero {
             height: 80vh;
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            /* background: linear-gradient(to right, #f8f9fa, #e9ecef); */
+            background: url('image/diamond-background.jpg') no-repeat center center;
+            background-size: cover;
+            background-position-y: -400px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            position: relative;
+        }
+
+        /* 添加一个覆盖层使文字更容易阅读 */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2); 
+            z-index: 1;
         }
         
         .hero-content {
             text-align: center;
+            position: relative;
+            z-index: 2; /* 确保内容显示在覆盖层之上 */
         }
         
         .hero h1 {
@@ -338,6 +356,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -364,7 +383,7 @@
             </div>
         </section>
         
-        <!-- 特性部分 -->
+        <!-- 钻石品类 -->
         <section id="features" class="features">
             <div class="section-title">
                 <h2>Our Diamond Collection</h2>
@@ -372,32 +391,44 @@
             </div>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <div class="feature-icon">◇</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i> 
+                    </div>
                     <h3>Round Brilliant</h3>
                     <p>The classic round brilliant cut maximizes a diamond's fire and brilliance, creating unmatched sparkle from every angle.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">◈</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-square"></i> 
+                    </div>
                     <h3>Princess Cut</h3>
                     <p>Contemporary and elegant, our princess cut diamonds feature sharp corners and exceptional light performance.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">⬦</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-square"></i> 
+                    </div>
                     <h3>Emerald Cut</h3>
                     <p>Sophisticated step-cut facets create a hall-of-mirrors effect, highlighting a diamond's exceptional clarity.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">⟐</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i> 
+                    </div>
                     <h3>Asscher Cut</h3>
                     <p>The royal Asscher cut features a distinctive square shape with cropped corners and step-cut facets.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">⬙</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-egg" style="transform: rotate(90deg);"></i> 
+                    </div>
                     <h3>Oval Cut</h3>
                     <p>Elongated brilliance that creates the illusion of greater size while offering exceptional fire and scintillation.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">♦</div>
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i> 
+                    </div>
                     <h3>Heart Cut</h3>
                     <p>The ultimate symbol of romance, our heart-shaped diamonds are perfectly proportioned for maximum beauty.</p>
                 </div>
@@ -424,9 +455,9 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <h3>Visit Our Showroom</h3>
-                        <p>123 Luxury Avenue</p>
-                        <p>Diamond District</p>
-                        <p>New York, NY 10001</p>
+                        <p>#333 Yefeng Road</p>
+                        <p>Jinshui District</p>
+                        <p>Henan China</p>
                     </div>
                     <div class="contact-item">
                         <h3>Contact Information</h3>
@@ -475,16 +506,14 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-container">
-            <p>Diamyric - Where Brilliance Meets Perfection</p>
+            <p>Diamyric - Sparkle Verse Entwine</p>
             <ul class="footer-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Collection</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
             </ul>
-            <p class="copyright">© 2025 Diamyric. All Rights Reserved.</p>
+            <p class="copyright">© 2025 Diamyric®. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
