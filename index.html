@@ -104,6 +104,7 @@
             color: #555;
             margin-bottom: 20px;
             line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .btn {
@@ -358,7 +359,7 @@
         <section id="home" class="hero">
             <div class="hero-content" style="text-align: center">
                 <h1 style="white-space: nowrap">Exquisite Diamonds</br>Timeless Elegance</h1>
-                <p>Discover our curated collection of exceptional diamonds, meticulously selected for clarity, cut, and character.</br>Each Diamyric gem tells a unique story of natural perfection.</p>
+                <p>Experience the brilliance of our carefully curated diamond collection, where every gem is a masterpiece of clarity, cut, and character. At Diamyric, each stone whispers a tale of prismatic beauty, capturing the essence of elegance that endures forever.</p>
                 <a href="#features" class="btn">Explore Collection</a>
             </div>
         </section>
@@ -415,11 +416,11 @@
             </div>
         </section>
         
-        <!-- 联系部分 -->
+        <!-- 联系方式 -->
         <section id="contact" class="contact">
             <div class="contact-container">
                 <h2>Contact Us</h2>
-                <p>We're here to answer your questions and help you discover the perfect diamond.</p>
+                <p id="rotatingText" class="rotating-text"> Journey of finding the perfect diamond begins here.</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <h3>Visit Our Showroom</h3>
@@ -429,15 +430,48 @@
                     </div>
                     <div class="contact-item">
                         <h3>Contact Information</h3>
-                        <p>Email: info@diamyric.com</p>
-                        <p>Phone: +1 (800) DIAMONDS</p>
+                        <p>Email: info@dg-tools.cn</p>
+                        <p>WhatApp: +86-136-5385-0055</p>
                         <p>Hours: Mon-Sat, 10am-6pm</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <style>
+            .rotating-text {
+                font-size: 18px;
+                transition: opacity 0.3s ease-in-out;
+            }
+        </style>
+
+        <script>
+            // 定义轮播文本
+            const textArray = [
+                "Our experts are here to make every step as brilliant as our diamonds.",
+                "Reach out today and let us illuminate your path to timeless elegance.",
+                "Journey of finding the perfect diamond begins here."
+            ];
+
+            let index = 0; // 记录当前文本索引
+            const rotatingTextElement = document.getElementById("rotatingText");
+
+            function updateText() {
+                rotatingTextElement.style.opacity = 0; // 先淡出
+                setTimeout(() => {
+                    index = (index + 1) % textArray.length; // 获取下一个文本索引
+                    rotatingTextElement.textContent = textArray[index]; // 更新文本
+                    rotatingTextElement.style.opacity = 1; // 再淡入
+                }, 500); // 0.5秒后切换文本
+            }
+
+            // 每 5 秒执行一次
+            setInterval(updateText, 4000);
+        </script>
     </main>
     
+
+
     <!-- 页脚 -->
     <footer class="footer">
         <div class="footer-container">
